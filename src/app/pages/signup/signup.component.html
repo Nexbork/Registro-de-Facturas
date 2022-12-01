@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-6 offset-md-3">
+          <div class="container text-center">
+            <img src="../../../assets/add-user.png" width="80" height="80">
+          </div>
+          <h1 class="text-center">Registrese aquí</h1>
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Username</mat-label>
+              <input required [(ngModel)] = "user.aUserUsuario" name="aUserUsuario" matInput placeholder ="Digite el username de usuario" type="text">
+              <mat-hint>El username debe ser unico</mat-hint>
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Password del usuario</mat-label>
+              <input required [(ngModel)] = "user.aPasswordUsuario" name="aPasswordUsuario" matInput placeholder ="Digite el password del usuario" type="password">
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Nombre del usuario</mat-label>
+              <input required [(ngModel)] = "user.aNombreUsuario" name="aNombreUsuario" matInput placeholder ="Digite el nombre del usuario" type="text">
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Apellido del usuario</mat-label>
+              <input required [(ngModel)]= "user.aApellidoUsuario" name="aApellidoUsuario" matInput placeholder ="Digite el apellido del usuario" type="text">
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Correo del usuario</mat-label>
+              <input required [(ngModel)] = "user.aEmailUsuario" name="aEmailUsuario" matInput placeholder ="Digite el correo del usuario" type="email">
+            </mat-form-field>
+  
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Telefono del usuario</mat-label>
+              <span matPrefix>+51&nbsp;</span>
+              <input type="tel" required [(ngModel)] = "user.aTelefono" name="aTelefono" matInput placeholder ="555-666-777">
+            </mat-form-field>
+  
+            <div class="container text-center">
+              <button type="submit" mat-raised-button color="primary">Guardar</button>
+              <button type="reset" mat-raised-button color="accent">Limpiar</button>
+            </div>
+  
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

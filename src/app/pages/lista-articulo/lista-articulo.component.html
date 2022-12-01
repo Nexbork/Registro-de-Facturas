@@ -1,0 +1,17 @@
+<h1>Lista de Articulo</h1>
+
+<a mat-raised-button color="primary" href="/formarticulo">Nuevo Articulo</a>
+
+<table class="table table-striped table-dark">
+    <tr>
+        <td>Id Articulo</td>
+        <td>Articulo</td>
+    </tr>
+    <tr *ngFor="let i of lista">
+        <td>{{i.aIdArticulo}}</td>
+        <td>{{i.aArticulo}}</td>
+    </tr>
+</table>
+<div class="buttons">
+    <a mat-raised-button color="warn" href="/opciones">Regresar</a>
+</div>

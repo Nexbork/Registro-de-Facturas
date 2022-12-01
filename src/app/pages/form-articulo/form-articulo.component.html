@@ -1,0 +1,17 @@
+<div class="container">
+
+    <h2 class="card-title">{{titulo}}</h2>
+
+    <form> 
+        <div class="form-group row">
+            <label for="fecha" class="col-form-label col-sm-2">Articulo</label>
+            <div class="col-sm-6">
+                <input type="text" name="articulo" class="form-control"  required [(ngModel)] = "lista.aArticulo">
+            </div>
+        </div>
+    </form>
+
+    <button class="btn btn-success" role ="button" (click)='formSubmit()'>Registrar</button>
+
+    <a mat-raised-button color="warn" href="/listadetalle">Regresar</a>
+</div>

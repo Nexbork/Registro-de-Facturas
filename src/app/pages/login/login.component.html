@@ -1,0 +1,30 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+      <div class="row" style="margin-top: 20px">
+        <div class="col-md-6 offset-md-3">
+          <div class="container text-center">
+            <!-- <span class="example-spacer">imagen</span> -->
+          </div>
+          <h1 class="text-center"> Login</h1>
+          <form (ngSubmit)="formSubmit()">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input required [(ngModel)] = "datalogin.username" name="username" matInput placeholder ="Digite el username de usuario" type="text">
+                <mat-hint>El username debe ser unico</mat-hint>
+              </mat-form-field>
+    
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Password del usuario</mat-label>
+                <input required [(ngModel)] = "datalogin.password" name="password" matInput placeholder ="Digite el password del usuario" type="password">
+              </mat-form-field>
+            <div class="container text-center">
+              <button type="submit" mat-raised-button color="primary">Ingresar</button>
+              <button type="reset" mat-raised-button color="accent">Limpiar</button>
+            </div>
+  
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

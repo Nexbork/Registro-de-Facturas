@@ -1,0 +1,19 @@
+<h1>Lista de Detalle</h1>
+
+<a mat-raised-button color="primary" href="/formdetalle">Nueva Detalle</a>
+
+<table class="table table-striped table-dark">
+    <tr>
+        <td>Id Detalle</td>
+        <td>Id Factura</td>
+        <td>Id Articulo</td>
+    </tr>
+    <tr *ngFor="let i of lista">
+        <td>{{i.aIdDetalle}}</td>
+        <td>{{i.aIdFactura}}</td>
+        <td>{{i.aIdArticulo}}</td>
+    </tr>
+</table>
+<div class="buttons">
+    <a mat-raised-button color="warn" href="/opciones">Regresar</a>
+</div>
