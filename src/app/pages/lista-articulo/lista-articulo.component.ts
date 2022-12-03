@@ -19,4 +19,11 @@ export class ListaArticuloComponent implements OnInit {
     ) ;   
   }
 
+  delete(lista:ListaArticulo):void{
+    this.articuloService.deletarticulo(lista.aIdArticulo).subscribe(
+      res=>this.articuloService.getallarticulo().subscribe(
+        response=>this.lista=response
+      )
+    )
+  }
 }

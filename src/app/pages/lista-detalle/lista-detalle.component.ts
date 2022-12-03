@@ -18,4 +18,12 @@ export class ListaDetalleComponent implements OnInit {
     );
   }
 
+  delete(lista:ListaDetalle):void{
+    this.detalleService.deletedetalle(lista.aIdDetalle).subscribe(
+      res=>this.detalleService.getalldetalle().subscribe(
+        response=>this.lista=response
+      )
+    )
+  }
+
 }

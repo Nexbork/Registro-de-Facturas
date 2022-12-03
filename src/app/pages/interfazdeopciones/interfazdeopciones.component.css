@@ -1,0 +1,22 @@
+.container{
+    margin-top: 100px;
+    
+}
+
+.container .title{
+    text-align: center;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.container .buttons{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  
+}
+
+.container .buttons .margin{
+    margin: 10px;
+}

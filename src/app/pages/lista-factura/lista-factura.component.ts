@@ -19,4 +19,11 @@ export class ListaFacturaComponent implements OnInit {
       );
   }
 
+  delete(lista:ListaFacturas):void{
+    this.facturaService.deletefactura(lista.aIdFactura).subscribe(
+      res=>this.facturaService.getallfactura().subscribe(
+        response=>this.lista=response
+      )
+    )
+  }
 }

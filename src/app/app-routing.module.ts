@@ -42,6 +42,16 @@ const routes: Routes = [
   {
     path:'formarticulo',component: FormArticuloComponent, pathMatch:'full'
   },
+  {
+    path:'formfactura/:id',component: FormFacturaComponent, pathMatch:'full'
+  },
+  {
+    path:'formdetalle/:id',component: FormDetalleComponent, pathMatch:'full'
+  },
+  {
+    path:'formarticulo/:id',component: FormArticuloComponent, pathMatch:'full'
+  },
+  
 ];
 
 @NgModule({

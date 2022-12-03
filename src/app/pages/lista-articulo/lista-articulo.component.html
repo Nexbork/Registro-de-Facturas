@@ -1,17 +1,20 @@
 <h1>Lista de Articulo</h1>
-
+<div class="buttons">
 <a mat-raised-button color="primary" href="/formarticulo">Nuevo Articulo</a>
-
+<a mat-raised-button color="warn" href="/opciones">Regresar</a>
+</div>
 <table class="table table-striped table-dark">
     <tr>
-        <td>Id Articulo</td>
-        <td>Articulo</td>
+        <th>Id Articulo</th>
+        <th>Articulo</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </tr>
     <tr *ngFor="let i of lista">
         <td>{{i.aIdArticulo}}</td>
         <td>{{i.aArticulo}}</td>
+        <td> <button type="button" name="button" class="btn btn-primary" [routerLink]="['/formarticulo/',i.aIdArticulo]">Editar</button> </td>
+        <td> <button type="button" name="button" class="btn btn-danger" (click)="delete(i)">Eliminar</button></td>
     </tr>
 </table>
-<div class="buttons">
-    <a mat-raised-button color="warn" href="/opciones">Regresar</a>
-</div>
+

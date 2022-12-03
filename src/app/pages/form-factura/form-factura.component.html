@@ -2,21 +2,28 @@
 
     <h2 class="card-title">{{titulo}}</h2>
 
-    <form> 
+    <form>
         <div class="form-group row">
             <label for="Cliente" class="col-form-label col-sm-2">Id del Cliente</label>
             <div class="col-sm-6">
-                <input type="text" name="cliente" class="form-control" required [(ngModel)] = "lista.aIdCliente">
+                <input type="text" name="cliente" class="form-control" required [(ngModel)]="lista.aIdCliente">
             </div>
         </div>
         <div class="form-group row">
             <label for="fecha" class="col-form-label col-sm-2">Fecha</label>
             <div class="col-sm-6">
-                <input type="text" name="fecha" class="form-control"  required [(ngModel)] = "lista.aFecha">
+                <input type="date" name="fecha" class="form-control" required [(ngModel)]="lista.aFecha">
             </div>
         </div>
     </form>
 
-    <button class="btn btn-success" role ="button" (click)='formSubmit()'>Registrar</button>
-    <a mat-raised-button color="warn" href="/listafactura">Regresar</a>
+    <div class="buttons">
+        <button class="btn btn-success" role="button" (click)='formSubmit()' *ngIf="!lista.aIdFactura else elseblock">Registrar</button>
+        <ng-template #elseblock>
+            <button class="btn btn-success" role="button" (click)='update()'>Actualizar</button>
+            </ng-template>
+
+        <a mat-raised-button color="warn" href="/listafactura">Regresar</a>
+
+    </div>
 </div>

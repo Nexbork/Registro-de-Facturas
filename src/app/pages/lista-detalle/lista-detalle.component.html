@@ -1,19 +1,22 @@
-<h1>Lista de Detalle</h1>
-
-<a mat-raised-button color="primary" href="/formdetalle">Nueva Detalle</a>
+<h1>Lista de Detalles</h1>
+<div class="buttons">
+    <a mat-raised-button color="primary" href="/formdetalle">Nueva Detalle</a>
+    <a mat-raised-button color="warn" href="/opciones">Regresar</a>
+</div>
 
 <table class="table table-striped table-dark">
     <tr>
-        <td>Id Detalle</td>
-        <td>Id Factura</td>
-        <td>Id Articulo</td>
+        <th>Id Detalle</th>
+        <th>Id Factura</th>
+        <th>Id Articulo</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </tr>
     <tr *ngFor="let i of lista">
         <td>{{i.aIdDetalle}}</td>
         <td>{{i.aIdFactura}}</td>
         <td>{{i.aIdArticulo}}</td>
+        <td> <button type="button" name="button" class="btn btn-primary" [routerLink]="['/formdetalle/',i.aIdDetalle]">Editar</button> </td>
+        <td> <button type="button" name="button" class="btn btn-danger" (click)="delete(i)">Eliminar</button></td>
     </tr>
 </table>
-<div class="buttons">
-    <a mat-raised-button color="warn" href="/opciones">Regresar</a>
-</div>
