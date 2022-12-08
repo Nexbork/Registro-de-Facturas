@@ -33,9 +33,13 @@ export class LoginComponent implements OnInit {
 
     this.loginservice.generartoken(this.datalogin).subscribe(
       (data: any) => {
-        //console.log(data)
         this.loginservice.guardartoken(data.token);
-        this.loginservice.readallroles().subscribe((datarol) => { console.log(datarol) })
+        this.loginservice.getCurrentUser().subscribe((usuario:any)=>{
+          this.loginservice.setUser(usuario);
+          console.log(this.loginservice.getUserRol());
+        })
+        
+        //this.loginservice.readallroles().subscribe((datarol) => { console.log(datarol) })
         this.router.navigate(["/opciones"]);//rediccionar a mi ruta (lista de factura)
       }
     );
