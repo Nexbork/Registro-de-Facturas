@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from './../../service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,7 @@ export class SignupComponent implements OnInit {
     aEmailUsuario:'',
     aTelefono:''
   }
-  constructor(private userService:UserService, private snack:MatSnackBar) { }
+  constructor(private userService:UserService, private snack:MatSnackBar, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,10 @@ export class SignupComponent implements OnInit {
       return;
     }
     this.userService.insertarusuario(this.user).subscribe(
-      (data) => { console.log(data)} 
+      (data) => { 
+        console.log(data)
+        this.router.navigate(["/login"]);
+      }
       );
     
   }
